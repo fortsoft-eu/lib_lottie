@@ -9,6 +9,7 @@
 #include "lottie/lottie_icon.h"
 #include "ui/painter.h"
 #include "ui/toast/toast.h"
+#include "styles/palette.h"
 #include "styles/style_widgets.h"
 
 #include <crl/crl_async.h>
@@ -30,8 +31,10 @@ using namespace Ui::Toast;
 
 	auto descriptor = Lottie::IconDescriptor{
 		.name = config.iconLottie,
+		.color = &st::classicMenuText,
 		.sizeOverride = config.iconLottieSize.value_or(
 			st::defaultToastLottieSize),
+		.colorizeUsingAlpha = true,
 	};
 	descriptor.limitFps = true;
 
